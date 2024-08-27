@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RshbMasterpageComponent } from "../masterpages/rshb-masterpage/rshb-masterpage.component";
 import { RshbMasterpageModule } from "../masterpages/rshb-masterpage/rshb-masterpage.module";
+import {ErrorComponent} from "../masterpages/error/error.component";
 
 const RSHB_ROUTES: Routes = [
   {
@@ -16,8 +17,16 @@ const RSHB_ROUTES: Routes = [
       {
         path: 'about',
         loadChildren: () => import('@pages/about/about.module').then(m => m.AboutModule)
+      },
+      {
+        path: 'catalog',
+        loadChildren: () => import('@pages/catalog/catalog.module').then(m => m.CatalogModule)
       }
     ]
+  },
+  {
+    path: '**',
+    component: ErrorComponent,
   }
 ];
 

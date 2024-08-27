@@ -1,0 +1,33 @@
+@use "variables";
+
+$colors: (
+  'primary': --primary,
+  'primary-dark': --primary-dark,
+  'accent': --accent,
+  'light-color': --light-color,
+  'light-gray': --light-gray,
+  'light-green': --light-green,
+  'dark-main': --dark-main,
+  'dark-gray': --dark-gray,
+  'dark-green': --dark-green,
+  '--alternative-01': --alternative-01,
+  '--alternative-02': --alternative-02,
+  '--alternative-03': --alternative-03
+);
+
+.text {
+  @each $name, $value in $colors {
+    &_#{$name} {
+      color: var(#{$value}) !important;
+    }
+  }
+}
+
+.bg {
+  @each $name, $value in $colors {
+    &_#{$name} {
+      background-color: var(#{$value}) !important;
+    }
+  }
+}
+
