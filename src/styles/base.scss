@@ -1,0 +1,5 @@
+.banner-wrapper {
+  &__three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

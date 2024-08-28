@@ -15,6 +15,10 @@ const RSHB_ROUTES: Routes = [
         loadChildren: () => import('@pages/home-page.module').then(m => m.HomePageModule)
       },
       {
+        path: 'agricultural-machinery',
+        loadChildren: () => import('@pages/agricultural-machinery/agricultural-machinery.module').then(m => m.AgriculturalMachineryModule)
+      },
+      {
         path: 'about',
         loadChildren: () => import('@pages/about/about.module').then(m => m.AboutModule)
       },

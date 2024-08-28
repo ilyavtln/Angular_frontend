@@ -1,7 +1,6 @@
 .rshb-error {
   width: 100vw;
   min-height: 100vh;
-  padding: 0 1rem;
   background: var(--dark-gray);
   color: var(--light-color);
   display: flex;
@@ -12,7 +11,6 @@
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
 
     &_logo {
       display: flex;
