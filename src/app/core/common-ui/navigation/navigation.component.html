@@ -1,3 +1,24 @@
-<div class="container my-lg-5 my-md-3 my-2">
-  Навигация
-</div>
+@if (!isMobile) {
+  <div class="container-fluid px-0 rshb-bg_full-black nav-height">
+    <div class="container d-flex justify-content-between py-2 py-lg-3">
+      <div class="d-flex align-items-center gap-lg-4 gap-md-3">
+        <rshb-logo></rshb-logo>
+        <div class="d-flex fixed-margin gap-lg-4 gap-md-3">
+          <ng-container *ngFor="let item of content.NAVIGATION_TYPES">
+            <a class="menu-item" [routerLink]="item.link" routerLinkActive="active" [innerHTML]="item.title"></a>
+          </ng-container>
+        </div>
+      </div>
+      <div class="d-flex align-items-center fixed-margin gap-lg-4 gap-md-3">
+        <a class="menu-item logo__link" routerLink="/agricultural-machinery">
+          <img src="/assets/icons/search.svg" alt="">
+        </a>
+        <a class="menu-item" routerLink="/agricultural-machinery">
+          <img src="/assets/icons/cabinet.svg" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+} @else {
+  Мобильное меню
+}

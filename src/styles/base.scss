@@ -1,5 +1,28 @@
+@use "variables";
+@import "mixins/breakpoints";
+
 .banner-wrapper {
   &__three {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
+}
+
+.light-link {
+  color: var(--light-green);
+
+  &:hover {
+    color: var(--primary-light);
+  }
+}
+
+.big-text {
+  font-size: 96px;
 }

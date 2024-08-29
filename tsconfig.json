@@ -25,7 +25,8 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "@pages/*": ["src/app/pages/*"]
+      "@pages/*": ["src/app/pages/*"],
+      "@styles/*": ["src/styles/*"]
     }
   },
   "angularCompilerOptions": {

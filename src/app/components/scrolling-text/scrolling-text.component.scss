@@ -1,0 +1,24 @@
+.scrolling-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 32px;
+  font-weight: 600;
+  animation: scrollText linear infinite;
+  animation-duration: 15s; /* Скорость прокрутки, измените по необходимости */
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -41,8 +41,7 @@
             ],
             "styles": [
               "src/styles/styles.scss",
-              "./node_modules/bootstrap/scss/bootstrap-utilities.scss",
-              "./node_modules/bootstrap/scss/bootstrap-grid.scss"
+              "./node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -107,8 +106,7 @@
             ],
             "styles": [
               "src/styles/styles.scss",
-              "./node_modules/bootstrap/scss/bootstrap-utilities.scss",
-              "./node_modules/bootstrap/scss/bootstrap-grid.scss"
+              "./node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "scripts": []
           }

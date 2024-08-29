@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer.component';
+import {RouterLink, RouterLinkActive} from "@angular/router";
+import {RshbLogoModule} from "../rshb-logo/rshb-logo.module";
 
 
 
@@ -12,7 +14,10 @@ import { FooterComponent } from './footer.component';
     FooterComponent
   ],
   imports: [
-    CommonModule
+      CommonModule,
+      RouterLink,
+      RouterLinkActive,
+      RshbLogoModule
   ]
 })
 export class FooterModule { }

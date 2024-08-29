@@ -4,6 +4,7 @@ $colors: (
   'primary': --primary,
   'primary-dark': --primary-dark,
   'accent': --accent,
+  'full-black': --full-black,
   'light-color': --light-color,
   'light-gray': --light-gray,
   'light-green': --light-green,
@@ -21,7 +22,7 @@ $colors: (
 
 .rshb-text {
   @each $name, $value in $colors {
-    &-#{$name} {
+    &_#{$name} {
       color: var(#{$value}) !important;
     }
   }
@@ -33,5 +34,32 @@ $colors: (
       background-color: var(#{$value}) !important;
     }
   }
+}
+
+.green-gradient {
+  background-color: #08deaa;
+  background-image: linear-gradient(90deg, #08deaa -12.99%, #00aafa 176.77%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom-color: #08deaa;
+}
+
+.pink-gradient {
+  background-color: #fa17d3;
+  background-image: linear-gradient(90deg, #fa17d3 -12.99%, #b539ff 176.77%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom-color: #fa17d3;
+}
+
+.blue-gradient {
+  background-color: #21cbff;
+  background-image: linear-gradient(90deg, #21cbff -12.99%, #2691ff 176.77%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom-color: #21cbff;
 }
 

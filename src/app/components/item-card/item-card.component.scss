@@ -1,3 +1,82 @@
-.rshb-item-card {
-  border: 1px solid red;
+.product-card {
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__image {
+    padding: 15px;
+
+    img {
+      max-width: 100%;
+      max-height: 150px;
+    }
+
+    &__bg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--card-gray);
+    }
+  }
+
+  &__content {
+    background-color: var(--card-dark-bg);
+  }
+}
+
+.product-details {
+  padding: 15px;
+  text-align: left;
+}
+
+.product-details h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.product-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.product-actions .buy-button,
+.product-actions .details-button {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-actions .buy-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.product-actions .details-button {
+  background-color: #007BFF;
+  color: white;
+}
+
+.product-actions .buy-button:hover {
+  background-color: #45a049;
+}
+
+.product-actions .details-button:hover {
+  background-color: #0056b3;
 }

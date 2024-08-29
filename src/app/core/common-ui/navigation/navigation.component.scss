@@ -1,0 +1,39 @@
+@import "src/styles/mixins/_breakpoints.scss";
+
+.nav-height {
+  @include media-breakpoint-up(md) {
+    height: 3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 3.5rem;
+  }
+}
+
+.menu-item {
+  color: var(--light-color);
+  font-weight: 500;
+
+  &.active,
+  &:hover {
+    color: var(--primary-light);
+  }
+}
+
+.logo {
+  &__link {
+    svg path {
+      fill: white;
+    }
+
+    &:hover {
+      svg {
+        fill: var(--primary-light);
+      }
+    }
+  }
+}
+
+.fixed-margin {
+  margin-bottom: -10px;
+}

@@ -1,11 +1,15 @@
+@use "extended-variables";
+
 :root {
   --primary: #01a077;
   --primary-dark: #006869;
   --primary-light: #8ac6a2;
+  --full-black: #161616;
   --accent: #eb84b1;
 
   --light-color: #ffffff;
   --light-gray: #f6f6f6;
+  --card-gray: #e7e7e7;
   --light-green: #e2efe6;
 
   --dark-main: #141d1a;

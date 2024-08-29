@@ -11,12 +11,15 @@ a {
 }
 
 body {
-  margin: 0;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+.container-fluid {
+  --bs-gutter-x: 0;
 }

@@ -1,0 +1,11 @@
+@import "src/styles/mixins/_breakpoints.scss";
+
+.rshb-footer {
+  &__item {
+    color: var(--footer-color);
+
+    &:hover {
+      color: var(--footer-hover-color);
+    }
+  }
+}

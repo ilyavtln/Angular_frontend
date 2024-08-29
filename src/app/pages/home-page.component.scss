@@ -1,0 +1,88 @@
+@import "src/styles/mixins/_breakpoints.scss";
+
+$images-folder: '/assets/images/';
+
+.hero-banner {
+  &__img-bg {
+    position: relative;
+    background-image: url($images-folder + 'bg/fht1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(100vh - 48px);
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      height: calc(100vh - 56px);
+    }
+  }
+
+  &__content {
+    &-title {
+      color: var(--light-color);
+      font-size: 2.5rem;
+      font-weight: 700;
+
+      .title-bold {
+
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: 3rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 4rem;
+        max-width: 90%;
+      }
+    }
+
+    &-description {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--light-color);
+
+      @include media-breakpoint-up(md) {
+        font-size: 2rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 2.5rem;
+        max-width: 80%;
+      }
+
+      &_link {
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        padding-bottom: 4px;
+
+        &:hover {
+          color: var(--light-color);
+          background-color: var(--light-color);
+          background-image: none;
+          border-color: var(--light-color);
+        }
+      }
+    }
+  }
+
+  &__scroll-bar {
+    position: absolute;
+    bottom: 2px;
+  }
+}
+
+.component-class {
+  background-image: url($images-folder + 'bg/fht1.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 48px);
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    height: calc(100vh - 56px);
+  }
+}

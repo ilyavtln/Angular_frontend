@@ -1,33 +1,66 @@
 $fonts-url: '/assets/fonts/';
 
 @font-face {
-  font-family: 'Ubuntu';
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  src: url($fonts-url + "Montserrat-Thin.ttf") format("ttf");
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  src: url($fonts-url + "Montserrat-ExtraLight.ttf") format("ttf");
+  font-display: fallback;
+}
+
+
+@font-face {
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 300;
-  src: url($fonts-url + "Ubuntu-Light.ttf") format("ttf");
+  src: url($fonts-url + "Montserrat-Light.ttf") format("ttf");
   font-display: fallback;
 }
 
 @font-face {
-  font-family: 'Ubuntu';
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: url($fonts-url + "Ubuntu-Regular.ttf") format("ttf");
+  src: url($fonts-url + "Montserrat-Regular.ttf") format("ttf");
   font-display: fallback;
 }
 
 @font-face {
-  font-family: 'Ubuntu';
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url($fonts-url + "Montserrat-Medium.ttf") format("ttf");
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  src: url($fonts-url + "Ubuntu-Medium.ttf") format("ttf");
+  src: url($fonts-url + "Montserrat-SemiBold.ttf") format("ttf");
   font-display: fallback;
 }
 
 @font-face {
-  font-family: 'Ubuntu';
+  font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 700;
-  src: url($fonts-url + "Ubuntu-Bold.ttf") format("ttf");
+  font-weight: 600;
+  src: url($fonts-url + "Montserrat-Bold.ttf") format("ttf");
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url($fonts-url + "Montserrat-Black.ttf") format("ttf");
   font-display: fallback;
 }
