@@ -1,20 +1,20 @@
-<div class="product-card rounded-3 rshb-bg__primary-light">
+<div class="product-card rounded-4 rshb-bg__primary-light">
   <div class="product-card__image rshb-bg__primary-light">
-    <div class="bg-danger rounded-top-4">
+    <div class="bg-card rounded-4">
       <div class="p-3">
-        <div class="product-card__chip p-1 rounded-3" [innerHTML]="card.type"></div>
+        <rshb-chip [chip]="card.type" chipClass="dark"></rshb-chip>
       </div>
       <div class="product-image__bg d-flex justify-content-center rounded-3">
-        <img [src]="card.image" alt="Product Image">
+        <img class="mb-3" [src]="card.image" alt="Product Image">
       </div>
     </div>
   </div>
   <div class="product-card__content">
     <div class="product-details rshb-text_light-color">
-      <h3 class="product-title" [innerHTML]="card.name"></h3>
-      <p>Год выпуска: <span [innerHTML]="card.year"></span></p>
-      <p>Состояние: <span [innerHTML]="card.state"></span></p>
-      <p>Стоимость <span [innerHTML]="card.cost"></span></p>
+      <h2 class="fw-bold green-gradient" [innerHTML]="card.name"></h2>
+      <p class="rshb-text_full-black">Год выпуска: <span class="rshb-text_secondary-text" [innerHTML]="card.year"></span></p>
+      <p class="rshb-text_full-black">Состояние: <span class="rshb-text_secondary-text" [innerHTML]="card.state"></span></p>
+      <p class="rshb-text_full-black">Стоимость <span class="rshb-text_secondary-text" [innerHTML]="card.cost + ' ₽'"></span></p>
     </div>
     <div class="product-actions d-flex flex-column">
       <div class="d-flex gap-3 mb-3">

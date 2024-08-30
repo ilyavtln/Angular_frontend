@@ -1,8 +1,16 @@
+@import "src/styles/mixins/_breakpoints.scss";
+
 .image-wrapper {
   flex-shrink: 0;
   height: 3.75rem;
 
   img {
     max-height: 3.75rem;
+  }
+}
+
+.w-md-100 {
+  @include media-breakpoint-up(md) {
+    width: 100%;
   }
 }

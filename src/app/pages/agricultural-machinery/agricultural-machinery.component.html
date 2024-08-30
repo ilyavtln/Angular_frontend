@@ -34,27 +34,52 @@
 </section>
 
 <section class="page-section">
-  <div class="container-fluid bg-black p-3">
+  <div class="container-fluid rshb-bg_light-gray p-3">
     <div class="container">
-      <h3 class="text-center text-white fw-600">Подбирайте подходящие товары</h3>
+      <h3 class="text-center fw-600 mb-3">Подбирайте подходящие товары</h3>
+      <div class="d-flex justify-content-center flex-column flex-md-row gap-3 gap-lg-4 mb-3">
+        <select [(ngModel)]="selectedCategory" (ngModelChange)="applyFilters()" class="form-select">
+          <option value="Все">Все</option>
+          <option value="Трактор">Трактор</option>
+          <option value="Уборочная техника">Уборочная техника</option>
+          <option value="Уход за посевами">Уход за посевами</option>
+          <option value="Обработка почвы">Обработка почвы</option>
+          <option value="Заготовка кормов">Заготовка кормов</option>
+        </select>
+        <select [(ngModel)]="selectedSortBy" (ngModelChange)="applyFilters()" class="form-select">
+          <option value="Не важно">Выберите критерий сортировки</option>
+          <option value="Цена">Цена</option>
+          <option value="Год">Год</option>
+          <option value="Состояние">Состояние</option>
+        </select>
+        <select [(ngModel)]="selectedSortOrder" (ngModelChange)="applyFilters()" class="form-select" [disabled]="selectedSortBy === 'Не важно'">
+          <option value="Не важно">Не важно</option>
+          <option value="asc">По возрастанию</option>
+          <option value="desc">По убыванию</option>
+        </select>
+      </div>
       <div class="myFlex my-3">
-        <input class="search-input rounded-3 me-4" type=search name="focus" required placeholder="Введите запрос">
-        <button class="btn-custom">
-          <i class="glyphicon glyphicon-star">Найти</i>
-        </button>
+        <input class="search-input rounded-3" type="search" [(ngModel)]="searchQuery" (ngModelChange)="onSearchQueryChange($event)" placeholder="Введите запрос">
       </div>
-      <div class="d-flex justify-content-center mb-3">
-        <button>Все</button>
-        <button>Категории</button>
-        <button>Цена</button>
-        <!-- По возрастанию, по убыванию, не важно -->
-        <button>Все</button>
+      <div class="d-flex justify-content-center flex-column flex-md-row gap-3 mb-3">
+        <button (click)="findOptimalItem()" class="w-100 btn btn-primary">Найти оптимальный товар</button>
+        <button (click)="resetOptimalItem()" class="w-100 btn btn-primary">Сбросить</button>
       </div>
-      <div class="banner-wrapper__three d-grid gap-3">
-        <ng-container *ngFor="let item of content.MACHINERY_LIST">
-          <rshb-item-card [card]="item"></rshb-item-card>
-        </ng-container>
-      </div>
+      @if (!showOptimal) {
+        <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">
+          <ng-container *ngFor="let item of filteredList">
+            <rshb-item-card [card]="item"></rshb-item-card>
+          </ng-container>
+        </div>
+      } @else {
+        <div *ngIf="optimalItem" class="optimal-item">
+          <h4>Оптимальный товар</h4>
+          <div class="banner-wrapper__three d-grid gap-3">
+            <rshb-item-card [card]="optimalItem"></rshb-item-card>
+          </div>
+        </div>
+      }
     </div>
   </div>
 </section>
+

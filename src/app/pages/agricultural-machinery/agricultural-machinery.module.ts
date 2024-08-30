@@ -5,6 +5,10 @@ import { RouterModule, Routes } from "@angular/router";
 import {ChipModule} from "../../core/common-ui/chip/chip.module";
 import {AdvantagesCardModule} from "../../components/advantages-card/advantages-card.module";
 import {ItemCardModule} from "../../components/item-card/item-card.module";
+import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/material/autocomplete";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatInput} from "@angular/material/input";
 
 const ROUTES: Routes = [
   {
@@ -26,7 +30,15 @@ const ROUTES: Routes = [
     RouterModule.forChild(ROUTES),
     ChipModule,
     AdvantagesCardModule,
-    ItemCardModule
+    ItemCardModule,
+    MatFormField,
+    MatAutocomplete,
+    MatOption,
+    MatAutocompleteTrigger,
+    ReactiveFormsModule,
+    MatInput,
+    MatLabel,
+    FormsModule
   ]
 })
 export class AgriculturalMachineryModule { }

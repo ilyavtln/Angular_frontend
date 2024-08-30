@@ -23,6 +23,10 @@ const RSHB_ROUTES: Routes = [
         loadChildren: () => import('@pages/spares/spares.module').then(m => m.SparesModule)
       },
       {
+        path: 'configurator',
+        loadChildren: () => import('@pages/configurator/configurator.module').then(m => m.ConfiguratorModule)
+      },
+      {
         path: 'search',
         loadChildren: () => import('@pages/search/search.module').then(m => m.SearchModule)
       },
