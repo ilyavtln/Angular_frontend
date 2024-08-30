@@ -1,4 +1,5 @@
 @use "variables";
+@import "mixins/breakpoints";
 
 $colors: (
   'primary': --primary,
@@ -11,13 +12,37 @@ $colors: (
   'dark-main': --dark-main,
   'dark-gray': --dark-gray,
   'dark-green': --dark-green,
-  '--alternative-01': --alternative-01,
-  '--alternative-02': --alternative-02,
-  '--alternative-03': --alternative-03
+  'alternative-01': --alternative-01,
+  'alternative-02': --alternative-02,
+  'alternative-03': --alternative-03,
+  'secondary-text': --secondary-text
 );
 
 .page-section {
   margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 1.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 2rem;
+  }
+
+  &__main-banner {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+  }
 }
 
 .rshb-text {
@@ -43,6 +68,15 @@ $colors: (
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom-color: #08deaa;
+}
+
+.dark-greed-gradient {
+  background-color: var(--primary-dark);
+  background-image: linear-gradient(90deg, var(--primary-dark) -12.99%, var(--primary) 176.77%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom-color: var(--primary-dark);
 }
 
 .pink-gradient {

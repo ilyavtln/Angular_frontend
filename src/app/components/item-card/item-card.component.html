@@ -1,18 +1,20 @@
-<div class="product-card rounded-3">
-  <div class="product-card__image">
-    <div class="product-image__bg d-flex justify-content-center rounded-3">
-      <img src="/assets/images/carts/10239032.png" alt="Product Image">
+<div class="product-card rounded-3 rshb-bg__primary-light">
+  <div class="product-card__image rshb-bg__primary-light">
+    <div class="bg-danger rounded-top-4">
+      <div class="p-3">
+        <div class="product-card__chip p-1 rounded-3" [innerHTML]="card.type"></div>
+      </div>
+      <div class="product-image__bg d-flex justify-content-center rounded-3">
+        <img [src]="card.image" alt="Product Image">
+      </div>
     </div>
   </div>
   <div class="product-card__content">
-    <div class="product-details">
-      <h3 class="product-title">Название техники</h3>
-      <p>Модель: John Deere 6135B</p>
-      <p>Год выпуска: 2018</p>
-      <p>Тип двигателя: Дизельный</p>
-      <p>Рейтинг: 3.5</p>
-      <p>Пробег: 2500 часов</p>
-      <p>Состояние: Хорошее</p>
+    <div class="product-details rshb-text_light-color">
+      <h3 class="product-title" [innerHTML]="card.name"></h3>
+      <p>Год выпуска: <span [innerHTML]="card.year"></span></p>
+      <p>Состояние: <span [innerHTML]="card.state"></span></p>
+      <p>Стоимость <span [innerHTML]="card.cost"></span></p>
     </div>
     <div class="product-actions d-flex flex-column">
       <div class="d-flex gap-3 mb-3">

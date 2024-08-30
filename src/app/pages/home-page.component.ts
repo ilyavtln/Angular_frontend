@@ -1,13 +1,12 @@
-import {Component, OnChanges, SimpleChanges} from '@angular/core';
+import {Component} from '@angular/core';
+import * as content from './home-page.config'
 
 @Component({
   selector: 'rshb-home-page',
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
-export class HomePageComponent implements OnChanges {
+export class HomePageComponent{
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(document.body.clientWidth);
-  }
+  readonly content = content;
 }

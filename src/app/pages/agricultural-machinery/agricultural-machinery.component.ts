@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as content from './agricultural-machinery.config'
 
 @Component({
   selector: 'rshb-agricultural-machinery',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './agricultural-machinery.component.scss'
 })
 export class AgriculturalMachineryComponent {
-
+  readonly content = content;
 }

@@ -5,6 +5,7 @@ import {HomePageComponent} from "@pages/home-page.component";
 import {ItemCardModule} from "../components/item-card/item-card.module";
 import { AgriculturalMachineryComponent } from './agricultural-machinery/agricultural-machinery.component';
 import {ScrollingTextModule} from "../components/scrolling-text/scrolling-text.module";
+import {CarouselModule} from "../components/carousel/carousel.module";
 
 const ROUTES: Routes = [{
   path: '',
@@ -18,7 +19,8 @@ const ROUTES: Routes = [{
     CommonModule,
     RouterModule.forChild(ROUTES),
     ItemCardModule,
-    ScrollingTextModule
+    ScrollingTextModule,
+    CarouselModule
   ]
 })
 export class HomePageModule { }

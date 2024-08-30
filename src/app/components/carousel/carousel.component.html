@@ -1,0 +1,18 @@
+<div class="carousel">
+  <div class="slides-container" [style.transform]="getTransform()">
+    <div class="slide" *ngFor="let slide of slides; let i = index">
+      <div class="slide-content">
+        <img class="slide-image" [src]="slide.image" alt="Product Image">
+        <div class="slide-text">
+          <p class="slide-title" [innerHTML]="slide.title"></p>
+          <p class="slide-description" [innerHTML]="slide.description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="prev" (click)="prevSlide()">&#10094;</button>
+    <button class="next" (click)="nextSlide()">&#10095;</button>
+  </div>
+</div>

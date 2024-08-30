@@ -1,1 +1,60 @@
-<p>agricultural-machinery works!</p>
+<section class="page-section__main-banner">
+  <div class="container">
+    <div class="hero-banner__container rshb-bg_light-gray rounded-5 p-lg-5 p-md-4 p-3">
+      <div class="hero-banner__content d-flex h-100 justify-content-center flex-column">
+        <rshb-chip></rshb-chip>
+        <div class="hero-banner__content-title mb-3">
+          Самая лучшая техника
+        </div>
+        <div class="hero-banner__content-description w-75 mb-3">
+          Большой выбор <span class="dark-greed-gradient">сельскохозяйственной</span> техники для различных потребностей по низким ценам и с гарантией от поставщиков
+        </div>
+        <div class="hero-banner__content-controls">
+          <a class="rshb-btn rshb-btn__primary">Подобрать</a>
+        </div>
+      </div>
+      <div class="hero-banner__image">
+        <img class="w-100" src="/assets/images/banners/green-tractor.png">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container">
+    <div class="p-3 p-md-4 p-lg-5 rounded-5 rshb-bg_light-gray">
+      <h3 class="mb-lg-4 mb-3 fw-600">Преимущества покупки техники</h3>
+      <div class="d-grid banner-wrapper__two gap-3">
+        <ng-container *ngFor="let item of content.ADVANTAGES_CARD">
+          <rshb-advantages-card [card]="item"></rshb-advantages-card>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container-fluid bg-black p-3">
+    <div class="container">
+      <h3 class="text-center text-white fw-600">Подбирайте подходящие товары</h3>
+      <div class="myFlex my-3">
+        <input class="search-input rounded-3 me-4" type=search name="focus" required placeholder="Введите запрос">
+        <button class="btn-custom">
+          <i class="glyphicon glyphicon-star">Найти</i>
+        </button>
+      </div>
+      <div class="d-flex justify-content-center mb-3">
+        <button>Все</button>
+        <button>Категории</button>
+        <button>Цена</button>
+        <!-- По возрастанию, по убыванию, не важно -->
+        <button>Все</button>
+      </div>
+      <div class="banner-wrapper__three d-grid gap-3">
+        <ng-container *ngFor="let item of content.MACHINERY_LIST">
+          <rshb-item-card [card]="item"></rshb-item-card>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>

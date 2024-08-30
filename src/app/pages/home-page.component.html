@@ -1,31 +1,51 @@
-<div class="hero-banner__img-bg">
-  <div class="h-100 d-flex justify-content-center flex-column">
-    <div class="container">
-      <div class="hero-banner__content-title mb-md-5 mb-3">
-        Сервис для платформы <span class="title-bold">«Свое&nbsp;фермерство»</span>
+<section class="page-section">
+  <div class="hero-banner__img-bg">
+    <div class="h-100 d-flex justify-content-center flex-column">
+      <div class="container">
+        <div class="hero-banner__content-title mb-md-5 mb-3">
+          Сервис для платформы <span class="title-bold">«Свое&nbsp;фермерство»</span>
+        </div>
+        <div class="hero-banner__content-description">
+          Автоматический подбор
+          <a
+            routerLink="/agricultural-machinery">
+            <span class="green-gradient hero-banner__content-description_link">с/x&nbsp;техники</span>
+          </a>
+          и
+          <a
+            routerLink="/agricultural-machinery">
+            <span class="pink-gradient hero-banner__content-description_link">запчастей</span>
+          </a>
+          для
+          <span class="blue-gradient hero-banner__content-description_link">&#123;&nbsp;фермеров&nbsp;&#125;</span>
+          и не только
+        </div>
       </div>
-      <div class="hero-banner__content-description">
-        Автоматический подбор
-        <a
-          routerLink="/agricultural-machinery">
-          <span class="green-gradient hero-banner__content-description_link">с/x техники</span>
-        </a>
-        и
-        <a
-          routerLink="/agricultural-machinery">
-          <span class="pink-gradient hero-banner__content-description_link">запчастей</span>
-        </a>
-        для
-        <span class="blue-gradient hero-banner__content-description_link">&#123; фермеров &#125;</span>
-        и не только
+      <div class="hero-banner__scroll-bar w-100 d-none d-md-block d-lg-none">
+        <rshb-scrolling-text></rshb-scrolling-text>
       </div>
-    </div>
-    <div class="hero-banner__scroll-bar w-100 d-lg-none">
-      <rshb-scrolling-text></rshb-scrolling-text>
     </div>
   </div>
-</div>
+</section>
 
+<section class="page-section">
+  <div class="container">
+    <h2 class="text-black text-center">
+      Поставщики
+    </h2>
+    <rshb-carousel [slides]="content.SLIDES"></rshb-carousel>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="full-height bg-black">
+    <div class="container">
+      <h2 class="text-white py-2 text-center">
+        Топ продаж
+      </h2>
+    </div>
+  </div>
+</section>
 
 <p>home-page works!</p>
 <div class="d-flex mb-4">

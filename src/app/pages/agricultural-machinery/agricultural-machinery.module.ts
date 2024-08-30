@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AgriculturalMachineryComponent } from './agricultural-machinery.component';
 import { RouterModule, Routes } from "@angular/router";
+import {ChipModule} from "../../core/common-ui/chip/chip.module";
+import {AdvantagesCardModule} from "../../components/advantages-card/advantages-card.module";
+import {ItemCardModule} from "../../components/item-card/item-card.module";
 
 const ROUTES: Routes = [
   {
@@ -20,7 +23,10 @@ const ROUTES: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(ROUTES)
+    RouterModule.forChild(ROUTES),
+    ChipModule,
+    AdvantagesCardModule,
+    ItemCardModule
   ]
 })
 export class AgriculturalMachineryModule { }

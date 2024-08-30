@@ -2,6 +2,14 @@
 @import "mixins/breakpoints";
 
 .banner-wrapper {
+  &__two {
+    grid-template-columns: 1fr;
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   &__three {
     grid-template-columns: 1fr;
 
@@ -23,6 +31,36 @@
   }
 }
 
+.primary-bordered {
+  border: 1 solid var(--primary);
+}
+
 .big-text {
   font-size: 96px;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.rshb-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+  @include media-breakpoint-up(md) {
+    width: fit-content;
+    height: 3rem;
+  }
+
+  &__primary {
+    background-color: var(--primary);
+    color: var(--light-color);
+    border-color: transparent;
+  }
 }

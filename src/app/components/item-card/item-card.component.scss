@@ -1,6 +1,6 @@
 .product-card {
   width: 100%;
-  background-color: #f9f9f9;
+  background-color: var(--primary);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -9,8 +9,15 @@
   flex-direction: column;
   justify-content: space-between;
 
+  &__chip {
+    width: fit-content;
+    background: white;
+    border: 1px solid black;
+  }
+
   &__image {
     padding: 15px;
+    position: relative;
 
     img {
       max-width: 100%;
@@ -21,12 +28,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: var(--card-gray);
     }
   }
 
   &__content {
-    background-color: var(--card-dark-bg);
+
   }
 }
 
@@ -37,13 +43,13 @@
 
 .product-details h3 {
   margin: 0 0 10px;
+  font-weight: 600;
   font-size: 18px;
 }
 
 .product-details p {
   margin: 5px 0;
   font-size: 14px;
-  color: #555;
 }
 
 .product-actions {

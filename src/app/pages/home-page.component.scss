@@ -21,12 +21,8 @@ $images-folder: '/assets/images/';
   &__content {
     &-title {
       color: var(--light-color);
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
-
-      .title-bold {
-
-      }
 
       @include media-breakpoint-up(md) {
         font-size: 3rem;
@@ -39,7 +35,7 @@ $images-folder: '/assets/images/';
     }
 
     &-description {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 600;
       color: var(--light-color);
 
@@ -73,16 +69,8 @@ $images-folder: '/assets/images/';
   }
 }
 
-.component-class {
-  background-image: url($images-folder + 'bg/fht1.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: calc(100vh - 48px);
+.full-height {
+  position: relative;
+  height: 100vh;
   width: 100%;
-
-  @include media-breakpoint-up(lg) {
-    height: calc(100vh - 56px);
-  }
 }
