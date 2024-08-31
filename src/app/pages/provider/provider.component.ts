@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {MACHINERY_LIST} from "@pages/agricultural-machinery/agricultural-machinery.config";
 import {SPARES_LIST} from "@pages/spares/spares.config";
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'rshb-provider',
@@ -13,9 +14,13 @@ export class ProviderComponent implements OnInit{
   filteredList = [...this.fullList];
   param: string = '';
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private viewportScroller: ViewportScroller,
+  ) {}
 
   ngOnInit() {
+    this.viewportScroller.scrollToPosition([0, 0]);
     const name = this.route.snapshot.queryParamMap.get('name');
 
     if (name !== null) {

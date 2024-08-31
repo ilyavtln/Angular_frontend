@@ -44,14 +44,14 @@ export class MoreDetailsComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.viewportScroller.scrollToPosition([0, 0]);
       this.applyFilters(params);
-      this.cd.detectChanges(); // Force change detection if needed
+      this.cd.detectChanges();
     });
   }
 
   applyFilters(params: any): void {
     const { name, year, state, supplier } = params;
 
-    this.filteredList = [...this.fullList]; // Reset the filtered list
+    this.filteredList = [...this.fullList];
 
     if (name) {
       this.filteredList = this.filteredList.filter(item => item.name.toLowerCase().includes(name.toLowerCase()));
@@ -76,8 +76,8 @@ export class MoreDetailsComponent implements OnInit {
 
     if (this.filteredList.length === 1) {
       const firstItem = this.filteredList[0];
-      this.BANNER.description = firstItem.description || ''; // Ensure description is set if available
-      this.BANNER.image = firstItem.image || ''; // Ensure image URL is set if available
+      this.BANNER.description = firstItem.description || '';
+      this.BANNER.image = firstItem.image || '';
     }
   }
 

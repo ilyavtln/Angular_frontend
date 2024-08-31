@@ -15,7 +15,6 @@ export class CarouselComponent {
 
   constructor(@Inject(PLATFORM_ID) private platformId: any) {}
 
-  // Проверяем, достигнут ли первый или последний слайд
   isFirstSlide(): boolean {
     return this.currentSlide === 0;
   }
@@ -29,14 +28,12 @@ export class CarouselComponent {
     return index === (this.currentSlide + this.getSlidesPerView());
   }
 
-  // Переход к следующему слайду
   nextSlide() {
     if (!this.isLastSlide()) {
       this.currentSlide++;
     }
   }
 
-  // Переход к предыдущему слайду
   prevSlide() {
     if (!this.isFirstSlide()) {
       this.currentSlide--;

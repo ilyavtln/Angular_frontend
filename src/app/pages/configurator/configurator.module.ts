@@ -5,6 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {HeroBannerModule} from "../../components/hero-banner/hero-banner.module";
 import {FormsModule} from "@angular/forms";
 import {ItemCardModule} from "../../components/item-card/item-card.module";
+import {MatSlider} from "@angular/material/slider";
 
 export const ROUTES :Routes = [
   { path: '', component: ConfiguratorComponent },
@@ -19,7 +20,8 @@ export const ROUTES :Routes = [
     RouterModule.forChild(ROUTES),
     HeroBannerModule,
     FormsModule,
-    ItemCardModule
+    ItemCardModule,
+    MatSlider
   ]
 })
 export class ConfiguratorModule { }

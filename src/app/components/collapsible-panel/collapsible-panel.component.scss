@@ -20,16 +20,16 @@
   }
 
   span {
-    font-size: 36px; /* Размер стрелки */
+    font-size: 36px;
     transition: transform 0.3s ease;
   }
 
   .arrow-expanded {
-    transform: rotate(90deg); /* Повернуть стрелку вправо */
+    transform: rotate(90deg);
   }
 
   .arrow-collapsed {
-    transform: rotate(0deg); /* Стрелка указывает вправо */
+    transform: rotate(0deg);
   }
 
   div {

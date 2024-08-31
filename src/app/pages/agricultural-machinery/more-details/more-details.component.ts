@@ -43,7 +43,7 @@ export class MoreDetailsComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.viewportScroller.scrollToPosition([0, 0]);
       this.applyFilters(params);
-      this.cd.detectChanges(); // Force change detection if needed
+      this.cd.detectChanges();
     });
   }
 

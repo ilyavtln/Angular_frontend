@@ -12,7 +12,7 @@ export class SparesComponent implements OnInit{
 
   showOptimal: boolean = false;
 
-  public machineryList = content.SPARES_LIST;
+  public sparesList = content.SPARES_LIST;
   public filteredList = [...content.SPARES_LIST];
   public selectedCategory: string = 'Все';
   public selectedSortBy: string = 'Не важно';
@@ -30,7 +30,7 @@ export class SparesComponent implements OnInit{
 
   applyFilters(): void {
     this.showOptimal = false
-    let tempList = [...this.machineryList];
+    let tempList = [...this.sparesList];
 
     if (this.selectedCategory !== 'Все') {
       tempList = tempList.filter(item => item.type === this.selectedCategory);

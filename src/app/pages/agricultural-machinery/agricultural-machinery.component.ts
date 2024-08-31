@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as content from './agricultural-machinery.config';
 import {ViewportScroller} from "@angular/common";
 
@@ -7,7 +7,7 @@ import {ViewportScroller} from "@angular/common";
   templateUrl: './agricultural-machinery.component.html',
   styleUrls: ['./agricultural-machinery.component.scss']
 })
-export class AgriculturalMachineryComponent {
+export class AgriculturalMachineryComponent implements OnInit{
   readonly content = content;
 
   showOptimal: boolean = false;

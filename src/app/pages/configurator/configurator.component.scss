@@ -1,0 +1,31 @@
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.toggle-button {
+  background-color: transparent;
+  border: 2px solid var(--primary-dark);
+  color: var(--dark-gray);
+  border-radius: 1rem;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &.active {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  &:hover {
+    background-color: var(--primary-dark);
+    color: white;
+  }
+}
+
+.filters {
+
+}

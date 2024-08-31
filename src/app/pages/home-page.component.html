@@ -38,13 +38,13 @@
 </section>
 
 <section class="page-section">
-  <div class="full-height bg-black">
+  <div class="bg-black py-3">
     <div class="container">
       <h2 class="text-white py-2 text-center">
         Запчасти
       </h2>
       <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">
-        <ng-container *ngFor="let item of MACHINERY_SLICED_LIST">
+        <ng-container *ngFor="let item of SPARES_SLICED_LIST">
           <rshb-item-card [card]="item"></rshb-item-card>
         </ng-container>
       </div>
@@ -63,7 +63,7 @@
         <rshb-item-card [card]="item"></rshb-item-card>
       </ng-container>
     </div>
-    <a class="rshb-btn rshb-btn__accent mt-3 mt-lg-4 w-100" routerLink="/agricultural-machinery">Смотреть все</a>
+    <a class="rshb-btn rshb-btn__accent mt-3 mt-lg-4 w-100" routerLink="/spares">Смотреть все</a>
   </div>
 </section>
 

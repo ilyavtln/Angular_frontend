@@ -18,16 +18,16 @@
   width: 100%;
   box-sizing: border-box;
   display: flex;
-  justify-content: center; /* Центрируем карточку внутри контейнера */
+  justify-content: center;
   padding: 1rem;
 }
 
 .slide-content {
-  background-color: #f5f5f5; /* Серый фон */
-  border-radius: 15px; /* Закругленные углы */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  padding: 20px; /* Внутренние отступы для содержимого карточки */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +37,7 @@
   max-width: 100%;
   height: auto;
   margin-bottom: 15px;
-  border-radius: 10px; /* Закругляем края изображений */
+  border-radius: 10px;
 }
 
 .slide-title {
@@ -82,23 +82,20 @@
   color: gray;
 }
 
-/* Large screens (>= 992px) */
 @media (min-width: 992px) {
   .slide {
-    width: calc(100% / 3); /* Показываем 3 слайда */
+    width: calc(100% / 3);
   }
 }
 
-/* Medium screens (>= 768px and < 992px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .slide {
-    width: calc(100% / 2); /* Показываем 2 слайда */
+    width: calc(100% / 2);
   }
 }
 
-/* Small screens (< 768px) */
 @media (max-width: 767px) {
   .slide {
-    width: 100%; /* Показываем 1 слайд */
+    width: 100%;
   }
 }

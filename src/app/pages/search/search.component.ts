@@ -13,14 +13,11 @@ export class SearchComponent {
 
   public searchQuery: string = '';
 
-  // Полный список элементов
   private fullList = [...MACHINERY_LIST, ...SPARES_LIST];
 
-  // Фильтрованный список элементов
   public filteredList = [...this.fullList];
 
   applyFilters(): void {
-    // Сброс списка на полный при каждом применении фильтра
     let tempList = [...this.fullList];
 
     if (this.searchQuery) {

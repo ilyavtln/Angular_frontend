@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RshbMasterpageComponent } from "../masterpages/rshb-masterpage/rshb-masterpage.component";
 import { RshbMasterpageModule } from "../masterpages/rshb-masterpage/rshb-masterpage.module";
-import {ErrorComponent} from "../masterpages/error/error.component";
-import {CabinetComponent} from "../masterpages/cabinet/cabinet.component";
 
 const RSHB_ROUTES: Routes = [
   {

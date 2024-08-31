@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ICollapsible} from "../../core/interfaces/collapsible.interface";
 
 @Component({
   selector: 'rshb-collapsible-panel',

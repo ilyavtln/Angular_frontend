@@ -8,6 +8,61 @@
   <div class="container-fluid p-3">
     <div class="container">
       <h3 class="text-center fw-600 mb-3">Подбирайте подходящие товары</h3>
+      <div class="button-container">
+        <button
+          class="toggle-button"
+          [class.active]="activeButton === 'machine'"
+          (click)="showBlock('machine')">
+          Техника
+        </button>
+        <button
+          class="toggle-button"
+          [class.active]="activeButton === 'spares'"
+          (click)="showBlock('spares')">
+          Запчасти
+        </button>
+      </div>
+      <div>
+        <div *ngIf="activeBlock === 'machine'">
+          <div class="filters d-flex gap-3 flex-column flex-md-row mb-3">
+            <input class="w-100 py-1" type="number" [(ngModel)]="yearFromMachine" placeholder="Введите год от"/>
+            <input class="w-100 py-1" type="number" [(ngModel)]="yearToMachine" placeholder="Введите год до" />
+          </div>
+          <div class="filters d-flex gap-3 flex-column flex-md-row mb-3">
+            <input class="w-100 py-1" type="number" [(ngModel)]="stateFromMachine" placeholder="Введите состояние от" />
+            <input class="w-100 py-1" type="number" [(ngModel)]="stateToMachine" placeholder="Введите состояние до" />
+          </div>
+          <div class="filters d-flex gap-3 flex-column flex-md-row mb-3">
+            <input class="w-100 py-1" type="number" [(ngModel)]="costFromMachine" placeholder="Введите цену от" />
+            <input class="w-100 py-1" type="number" [(ngModel)]="costToMachine" placeholder="Введите цену до" />
+          </div>
+          <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">
+            <ng-container *ngFor="let item of applyFiltersMachinery()">
+              <rshb-item-card [card]="item"></rshb-item-card>
+            </ng-container>
+          </div>
+        </div>
+        <div *ngIf="activeBlock === 'spares'">
+          <div class="filters d-flex gap-3 flex-column flex-md-row mb-3">
+            <input class="w-100 py-1" type="number" [(ngModel)]="yearFromSpares" placeholder="Введите год от" />
+            <input class="w-100 py-1" type="number" [(ngModel)]="yearToSpares" placeholder="Введите год до" />
+          </div>
+          <div class="filters d-flex gap-3 flex-column flex-md-row mb-3">
+            <input class="w-100 py-1" type="number" [(ngModel)]="stateFromSpares" placeholder="Введите состояние от" />
+            <input class="w-100 py-1" type="number" [(ngModel)]="stateToSpares" placeholder="Введите состояние до" />
+          </div>
+          <div class="filters d-flex gap-3 flex-column flex-md-row mb-3">
+            <input class="w-100 py-1" type="number" [(ngModel)]="costFromSpares" placeholder="Введите цену от" />
+            <input class="w-100 py-1" type="number" [(ngModel)]="costToSpares" placeholder="Введите цену до" />
+          </div>
+          <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">
+            <ng-container *ngFor="let item of applyFiltersSpares()">
+              <rshb-item-card [card]="item"></rshb-item-card>
+            </ng-container>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
