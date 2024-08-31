@@ -1,0 +1,19 @@
+<section class="page-section__main-banner">
+  <div class="container">
+    <rshb-hero-banner [banner]="BANNER"></rshb-hero-banner>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container">
+    <h2 class="text-black text-center fw-600">
+      Смотрите также
+    </h2>
+    <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">
+      <ng-container *ngFor="let item of SPARES_LIST">
+        <rshb-item-card [card]="item"></rshb-item-card>
+      </ng-container>
+    </div>
+    <a class="rshb-btn rshb-btn__accent mt-3 mt-lg-4 w-100" routerLink="/spares">Смотреть все</a>
+  </div>
+</section>

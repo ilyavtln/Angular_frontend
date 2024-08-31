@@ -1,0 +1,11 @@
+.myFlex {
+  display: flex;
+}
+.myFlex > .search-input {
+  flex: 2;
+  border: 1px solid #dadada;
+  height: 52px;
+  padding: 10px 30px;
+  vertical-align: bottom;
+  box-sizing: border-box;
+}

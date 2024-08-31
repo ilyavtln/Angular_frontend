@@ -1,27 +1,63 @@
-<div class="product-card rounded-4 rshb-bg__primary-light">
-  <div class="product-card__image rshb-bg__primary-light">
-    <div class="bg-card rounded-4">
-      <div class="p-3">
-        <rshb-chip [chip]="card.type" chipClass="dark"></rshb-chip>
+<div class="product-card rounded-4 primary-bordered rshb-bg__primary-light h-100">
+  <div>
+    <div class="product-card__image rshb-bg__primary-light">
+      <div class="bg-card rounded-4">
+        <div class="p-3">
+          <rshb-chip [chip]="card.type" chipClass="dark"></rshb-chip>
+        </div>
+        <div class="product-image__bg d-flex justify-content-center rounded-3">
+          <img class="mb-3" [src]="card.image" alt="Product Image">
+        </div>
       </div>
-      <div class="product-image__bg d-flex justify-content-center rounded-3">
-        <img class="mb-3" [src]="card.image" alt="Product Image">
+    </div>
+    <div class="product-card__content">
+      <div class="product-details rshb-text_light-color">
+        <h2 class="fw-bold green-gradient" [innerHTML]="card.name"></h2>
+        <p class="rshb-text_full-black">Год выпуска: <span class="rshb-text_secondary-text" [innerHTML]="card.year"></span></p>
+        <p class="rshb-text_full-black">Состояние: <span class="rshb-text_secondary-text" [innerHTML]="card.state"></span></p>
+        <p class="rshb-text_full-black">Стоимость <span class="rshb-text_secondary-text" [innerHTML]="card.cost + ' ₽'"></span></p>
+        <ng-container *ngIf="isSpareType(card)">
+          <div class="d-flex gap-2 flex-wrap">
+            <ng-container *ngFor="let item of card.compatibility">
+              <rshb-chip [chip]="item"></rshb-chip>
+            </ng-container>
+          </div>
+        </ng-container>
       </div>
     </div>
   </div>
-  <div class="product-card__content">
-    <div class="product-details rshb-text_light-color">
-      <h2 class="fw-bold green-gradient" [innerHTML]="card.name"></h2>
-      <p class="rshb-text_full-black">Год выпуска: <span class="rshb-text_secondary-text" [innerHTML]="card.year"></span></p>
-      <p class="rshb-text_full-black">Состояние: <span class="rshb-text_secondary-text" [innerHTML]="card.state"></span></p>
-      <p class="rshb-text_full-black">Стоимость <span class="rshb-text_secondary-text" [innerHTML]="card.cost + ' ₽'"></span></p>
-    </div>
-    <div class="product-actions d-flex flex-column">
-      <div class="d-flex gap-3 mb-3">
-        <button class="buy-button w-100">Купить</button>
-        <button class="details-button w-100">Подробнее</button>
-      </div>
-      <button class="details-button w-100">Подробнее</button>
+  <div class="product-actions d-flex flex-column">
+    <div class="d-flex gap-2">
+      @if (isSpareType(card)) {
+        <a class="w-100 rshb-btn rshb-btn__secondary">
+          Купить
+        </a>
+        <a class="w-100 rshb-btn rshb-btn__primary"
+           routerLink="/spares/more-details"
+           [queryParams]="{
+           'name': card.name,
+           'year': card.year,
+           'state': card.state,
+           'supplier': card.supplier,
+           'image': card.image}">
+          Подробнее
+        </a>
+      }
+      @else {
+        <a class="w-100 rshb-btn rshb-btn__secondary">
+          Купить
+        </a>
+        <a class="w-100 rshb-btn rshb-btn__primary"
+           routerLink="/agricultural-machinery/more-details"
+           [queryParams]="{
+           'type':card.type,
+           'name': card.name,
+           'year': card.year,
+           'state': card.state,
+           'supplier': card.supplier}">
+          Подробнее
+        </a>
+      }
     </div>
   </div>
 </div>

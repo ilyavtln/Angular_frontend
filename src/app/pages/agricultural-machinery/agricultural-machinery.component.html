@@ -23,7 +23,7 @@
 <section class="page-section">
   <div class="container">
     <div class="p-3 p-md-4 p-lg-5 rounded-5 rshb-bg_light-gray">
-      <h3 class="mb-lg-4 mb-3 fw-600">Преимущества покупки техники</h3>
+      <h3 class="mb-lg-4 mb-3 fw-600">Преимущества покупки техники у нас</h3>
       <div class="d-grid banner-wrapper__two gap-3">
         <ng-container *ngFor="let item of content.ADVANTAGES_CARD">
           <rshb-advantages-card [card]="item"></rshb-advantages-card>
@@ -40,11 +40,11 @@
       <div class="d-flex justify-content-center flex-column flex-md-row gap-3 gap-lg-4 mb-3">
         <select [(ngModel)]="selectedCategory" (ngModelChange)="applyFilters()" class="form-select">
           <option value="Все">Все</option>
-          <option value="Трактор">Трактор</option>
-          <option value="Уборочная техника">Уборочная техника</option>
-          <option value="Уход за посевами">Уход за посевами</option>
-          <option value="Обработка почвы">Обработка почвы</option>
-          <option value="Заготовка кормов">Заготовка кормов</option>
+          <option value="МТЗ 82">МТЗ 82</option>
+          <option value="Кировец K7M 742">Кировец K7M 742</option>
+          <option value="Ростсельмаш RSM">Ростсельмаш RSM</option>
+          <option value="Case Magnum 340">Case Magnum 340</option>
+          <option value="Massey Ferguson">Massey Ferguson</option>
         </select>
         <select [(ngModel)]="selectedSortBy" (ngModelChange)="applyFilters()" class="form-select">
           <option value="Не важно">Выберите критерий сортировки</option>
@@ -62,8 +62,8 @@
         <input class="search-input rounded-3" type="search" [(ngModel)]="searchQuery" (ngModelChange)="onSearchQueryChange($event)" placeholder="Введите запрос">
       </div>
       <div class="d-flex justify-content-center flex-column flex-md-row gap-3 mb-3">
-        <button (click)="findOptimalItem()" class="w-100 btn btn-primary">Найти оптимальный товар</button>
-        <button (click)="resetOptimalItem()" class="w-100 btn btn-primary">Сбросить</button>
+        <button (click)="findOptimalItem()" class="w-100 rshb-btn rshb-btn__accent border-0">Найти оптимальный товар</button>
+        <button (click)="resetOptimalItem()" class="w-100 rshb-btn rshb-btn__accent-secondary border-0">Сбросить</button>
       </div>
       @if (!showOptimal) {
         <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">

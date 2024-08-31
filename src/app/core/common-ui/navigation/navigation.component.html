@@ -1,5 +1,6 @@
-@if (!isMobile) {
-  <div class="container-fluid px-0 rshb-bg_full-black nav-height">
+<div class="container-fluid px-0 rshb-bg_full-black nav-height">
+  <!-- Десктопное меню -->
+  <ng-container *ngIf="!isMobile">
     <div class="container d-flex justify-content-between py-2 py-lg-3">
       <div class="d-flex align-items-center gap-lg-4 gap-md-3">
         <rshb-logo></rshb-logo>
@@ -10,15 +11,54 @@
         </div>
       </div>
       <div class="d-flex align-items-center fixed-margin gap-lg-4 gap-md-3">
-        <a class="menu-item logo__link" routerLink="/agricultural-machinery">
-          <img src="/assets/icons/search.svg" alt="">
+        <a class="menu-item logo__link" routerLink="/search">
+          <img src="/assets/icons/search.svg" alt="Search">
         </a>
-        <a class="menu-item" routerLink="/agricultural-machinery">
-          <img src="/assets/icons/cabinet.svg" alt="">
+        <a class="menu-item" routerLink="/cabinet">
+          <img src="/assets/icons/cabinet.svg" alt="Cabinet">
         </a>
       </div>
     </div>
-  </div>
-} @else {
-  Мобильное меню
-}
+  </ng-container>
+
+  <!-- Мобильное меню -->
+  <ng-container *ngIf="isMobile">
+    <nav class="navbar navbar-dark py-0">
+      <div class="container d-flex justify-content-between py-2">
+        <rshb-logo></rshb-logo>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header py-2 nav-height bg-black">
+            <rshb-logo></rshb-logo>
+            <button type="button" class="btn-close btn-close-white text-reset border-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body  bg-dark">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li *ngFor="let item of content.NAVIGATION_TYPES">
+                <a class="nav-link menu-item"
+                   [routerLink]="item.link"
+                   routerLinkActive="active"
+                   [innerHTML]="item.title"
+                   (click)="closeOffcanvas()"></a>
+              </li>
+              <a class="nav-link menu-item logo__link" routerLink="/search" (click)="closeOffcanvas()">
+                <div class="d-flex gap-2">
+                  <img src="/assets/icons/search.svg" alt="Search">
+                  <span>Поиск</span>
+                </div>
+              </a>
+              <a class="nav-link menu-item" routerLink="/agricultural-machinery" (click)="closeOffcanvas()">
+                <div class="d-flex gap-2">
+                  <img src="/assets/icons/cabinet.svg" alt="Cabinet">
+                  <span>Кабинет</span>
+                </div>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </ng-container>
+</div>

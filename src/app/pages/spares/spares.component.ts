@@ -1,23 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import * as content from './spares.config'
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'rshb-spares',
   templateUrl: './spares.component.html',
   styleUrl: './spares.component.scss'
 })
-export class SparesComponent {
+export class SparesComponent implements OnInit{
   readonly content = content;
 
   showOptimal: boolean = false;
 
-  public machineryList = content.MACHINERY_LIST;
-  public filteredList = [...content.MACHINERY_LIST];
+  public machineryList = content.SPARES_LIST;
+  public filteredList = [...content.SPARES_LIST];
   public selectedCategory: string = 'Все';
   public selectedSortBy: string = 'Не важно';
   public selectedSortOrder: string = 'Не важно';
   public searchQuery: string = '';
   public optimalItem: any = null;
+
+  constructor(
+    private viewportScroller: ViewportScroller,
+  ) {}
+
+  ngOnInit(): void {
+    this.viewportScroller.scrollToPosition([0, 0]);
+  }
 
   applyFilters(): void {
     this.showOptimal = false

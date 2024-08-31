@@ -7,10 +7,16 @@ import {ChipModule} from "../../core/common-ui/chip/chip.module";
 import {FormsModule} from "@angular/forms";
 import {ItemCardModule} from "../../components/item-card/item-card.module";
 
-const ROUTES: Routes = [{
-  path: '',
-  component: SparesComponent,
-}]
+const ROUTES: Routes = [
+  {
+    path: '',
+    component: SparesComponent,
+  },
+  {
+    path: 'more-details',
+    loadChildren: () => import('./more-details/more-details.module').then(m => m.MoreDetailsModule),
+  }
+]
 
 @NgModule({
   declarations: [

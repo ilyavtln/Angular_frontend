@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RshbMasterpageComponent } from "../masterpages/rshb-masterpage/rshb-masterpage.component";
 import { RshbMasterpageModule } from "../masterpages/rshb-masterpage/rshb-masterpage.module";
 import {ErrorComponent} from "../masterpages/error/error.component";
+import {CabinetComponent} from "../masterpages/cabinet/cabinet.component";
 
 const RSHB_ROUTES: Routes = [
   {
@@ -31,18 +32,18 @@ const RSHB_ROUTES: Routes = [
         loadChildren: () => import('@pages/search/search.module').then(m => m.SearchModule)
       },
       {
-        path: 'about',
-        loadChildren: () => import('@pages/about/about.module').then(m => m.AboutModule)
-      },
-      {
-        path: 'catalog',
-        loadChildren: () => import('@pages/catalog/catalog.module').then(m => m.CatalogModule)
+        path: 'providers',
+        loadChildren: () => import('@pages/provider/provider.module').then(m => m.ProviderModule)
       }
     ]
   },
   {
+    path: 'cabinet',
+    loadChildren: () => import('@masterpages/cabinet/cabinet.module').then(m => m.CabinetModule)
+  },
+  {
     path: '**',
-    component: ErrorComponent,
+    loadChildren: () => import('@masterpages/error/error.module').then(m => m.ErrorModule)
   }
 ];
 

@@ -1,0 +1,39 @@
+.box {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 200;
+  border-radius: 24px;
+  cursor: pointer;
+  background: var(--card-gray);
+  transition: all 0.3s ease;
+
+  h2 {
+    font-weight: 100;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  span {
+    font-size: 36px; /* Размер стрелки */
+    transition: transform 0.3s ease;
+  }
+
+  .arrow-expanded {
+    transform: rotate(90deg); /* Повернуть стрелку вправо */
+  }
+
+  .arrow-collapsed {
+    transform: rotate(0deg); /* Стрелка указывает вправо */
+  }
+
+  div {
+    margin-top: 10px;
+    overflow: hidden;
+  }
+}

@@ -10,8 +10,12 @@ $images-folder: '/assets/images/';
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: calc(100vh - 48px);
+    height: calc(100vh - 56px);
     width: 100%;
+
+    @include media-breakpoint-up(md) {
+      height: calc(100vh - 48px);
+    }
 
     @include media-breakpoint-up(lg) {
       height: calc(100vh - 56px);

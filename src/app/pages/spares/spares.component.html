@@ -1,20 +1,20 @@
 <section class="page-section__main-banner">
   <div class="container">
-    <div class="hero-banner__container rshb-bg_light-gray rounded-5 p-lg-5 p-md-4 p-3">
-      <div class="hero-banner__content d-flex h-100 justify-content-center flex-column">
-        <rshb-chip></rshb-chip>
-        <div class="hero-banner__content-title mb-3">
-          Самая лучшая техника
+    <div class="hero-banner__container bg-black rounded-5 p-lg-5 p-md-4 p-3">
+      <div class="hero-banner__content rshb-text_light-color d-flex h-100 justify-content-center flex-column">
+        <rshb-chip chip="Высокий спрос" chipClass="light"></rshb-chip>
+        <div class="hero-banner__content-title rshb-text_light-color mb-3">
+          Популярные запчасти для тракторов
         </div>
         <div class="hero-banner__content-description w-75 mb-3">
-          Большой выбор <span class="dark-greed-gradient">сельскохозяйственной</span> техники для различных потребностей по низким ценам и с гарантией от поставщиков
+          Большой выбор <span class="green-gradient fw-600">сельскохозяйственной</span> техники для различных потребностей по низким ценам и с гарантией от поставщиков
         </div>
         <div class="hero-banner__content-controls">
           <a class="rshb-btn rshb-btn__primary">Подобрать</a>
         </div>
       </div>
       <div class="hero-banner__image">
-        <img class="w-100" src="/assets/images/banners/green-tractor.png">
+        <img class="w-100" src="/assets/images/banners/spares.png">
       </div>
     </div>
   </div>
@@ -22,8 +22,8 @@
 
 <section class="page-section">
   <div class="container">
-    <div class="p-3 p-md-4 p-lg-5 rounded-5 rshb-bg_light-gray">
-      <h3 class="mb-lg-4 mb-3 fw-600">Преимущества покупки техники</h3>
+    <div class="p-3 p-md-4 p-lg-5 rounded-5 rshb-bg_dark-gray">
+      <h3 class="mb-lg-4 mb-3 fw-600 rshb-text_light-color">Преимущества покупки запчастей</h3>
       <div class="d-grid banner-wrapper__two gap-3">
         <ng-container *ngFor="let item of content.ADVANTAGES_CARD">
           <rshb-advantages-card [card]="item"></rshb-advantages-card>
@@ -34,17 +34,18 @@
 </section>
 
 <section class="page-section">
-  <div class="container-fluid rshb-bg_light-gray p-3">
+  <div class="container-fluid rshb-bg_dark-gray p-3">
     <div class="container">
-      <h3 class="text-center fw-600 mb-3">Подбирайте подходящие товары</h3>
-      <div class="d-flex justify-content-center flex-column flex-md-row gap-3 gap-lg-4 mb-3">
+      <h3 class="text-center fw-600 mb-3 rshb-text_light-color">Подбирайте подходящие товары</h3>
+      <div class="d-flex justify-content-center flex-column flex-md-row gap-3 gap-lg-4 mb-3 ">
         <select [(ngModel)]="selectedCategory" (ngModelChange)="applyFilters()" class="form-select">
           <option value="Все">Все</option>
-          <option value="Трактор">Трактор</option>
           <option value="Уборочная техника">Уборочная техника</option>
           <option value="Уход за посевами">Уход за посевами</option>
           <option value="Обработка почвы">Обработка почвы</option>
-          <option value="Заготовка кормов">Заготовка кормов</option>
+          <option value="Техника для полива">Техника для полива</option>
+          <option value="Расходники">Расходники</option>
+          <option value="Прочее">Прочее</option>
         </select>
         <select [(ngModel)]="selectedSortBy" (ngModelChange)="applyFilters()" class="form-select">
           <option value="Не важно">Выберите критерий сортировки</option>
@@ -62,8 +63,8 @@
         <input class="search-input rounded-3" type="search" [(ngModel)]="searchQuery" (ngModelChange)="onSearchQueryChange($event)" placeholder="Введите запрос">
       </div>
       <div class="d-flex justify-content-center flex-column flex-md-row gap-3 mb-3">
-        <button (click)="findOptimalItem()" class="w-100 btn btn-primary">Найти оптимальный товар</button>
-        <button (click)="resetOptimalItem()" class="w-100 btn btn-primary">Сбросить</button>
+        <button (click)="findOptimalItem()" class="w-100 rshb-btn rshb-btn__accent border-0">Найти оптимальный товар</button>
+        <button (click)="resetOptimalItem()" class="w-100 rshb-btn rshb-btn__accent-secondary border-0">Сбросить</button>
       </div>
       @if (!showOptimal) {
         <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">
@@ -73,7 +74,7 @@
         </div>
       } @else {
         <div *ngIf="optimalItem" class="optimal-item">
-          <h4>Оптимальный товар</h4>
+          <h4 class="rshb-text_light-color">Оптимальный товар</h4>
           <div class="banner-wrapper__three d-grid gap-3">
             <rshb-item-card [card]="optimalItem"></rshb-item-card>
           </div>

@@ -1,0 +1,32 @@
+<div class="hero-banner__container rshb-bg_light-gray rounded-5 p-lg-5 p-md-4 p-3">
+  <div class="hero-banner__content d-flex h-100 justify-content-center flex-column">
+    @if (banner.chip) {
+      <rshb-chip [chip]="banner.chip.title"></rshb-chip>
+    }
+    <div class="hero-banner__content-title mb-3" [innerHTML]="banner.title"></div>
+    @if (banner.description) {
+      <div class="hero-banner__content-description mb-3" [innerHTML]="banner.description"></div>
+    }
+    <div class="d-flex flex-column flex-md-row gap-2 gap-lg-3 mb-3">
+      @if (banner.year) {
+        <div class="rshb-border-bottom__accent w-fit-content" [innerHTML]="'<b>Год:</b> ' + banner.year"></div>
+      }
+      @if (banner.cost) {
+        <div class="rshb-border-bottom__primary w-fit-content" [innerHTML]="'<b>Стоимость:</b> ' + banner.cost + ' ₽'"></div>
+      }
+      @if (banner.state) {
+        <div class="rshb-border-bottom__primary-dark w-fit-content" [innerHTML]="'<b>Состояние:</b> ' + banner.state"></div>
+      }
+    </div>
+    @if (banner.anchors) {
+      <div class="hero-banner__content-controls">
+        <ng-container *ngFor="let anchor of banner.anchors">
+          <a class="rshb-btn rshb-btn__primary" [innerHTML]="anchor.title" [routerLink]="anchor.link"></a>
+        </ng-container>
+      </div>
+    }
+  </div>
+  <div class="hero-banner__image d-flex align-items-center mb-2 mb-md-0">
+    <img class="w-100 h-fit-content" [src]="banner.image">
+  </div>
+</div>

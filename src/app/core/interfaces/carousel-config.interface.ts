@@ -3,4 +3,5 @@ export interface ICarouselConfig {
   image: string;
   title: string;
   description: string;
+  href?: string;
 }

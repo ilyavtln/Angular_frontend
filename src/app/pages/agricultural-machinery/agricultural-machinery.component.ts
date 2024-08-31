@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import * as content from './agricultural-machinery.config';
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'rshb-agricultural-machinery',
@@ -19,15 +20,24 @@ export class AgriculturalMachineryComponent {
   public searchQuery: string = '';
   public optimalItem: any = null;
 
+  constructor(
+    private viewportScroller: ViewportScroller,
+  ) {}
+
+  ngOnInit(): void {
+    this.viewportScroller.scrollToPosition([0, 0]);
+  }
+
   applyFilters(): void {
     this.showOptimal = false
     let tempList = [...this.machineryList];
 
     if (this.selectedCategory !== 'Все') {
-      tempList = tempList.filter(item => item.type === this.selectedCategory);
+      tempList = tempList.filter(item => item.name === this.selectedCategory);
     }
 
     if (this.searchQuery) {
+      tempList = tempList.filter(item => item.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
       tempList = tempList.filter(item => item.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
     }
 

@@ -13,7 +13,7 @@
           </a>
           и
           <a
-            routerLink="/agricultural-machinery">
+            routerLink="/spares">
             <span class="pink-gradient hero-banner__content-description_link">запчастей</span>
           </a>
           для
@@ -30,7 +30,7 @@
 
 <section class="page-section">
   <div class="container">
-    <h2 class="text-black text-center">
+    <h2 class="text-black text-center fw-600">
       Поставщики
     </h2>
     <rshb-carousel [slides]="content.SLIDES"></rshb-carousel>
@@ -41,26 +41,51 @@
   <div class="full-height bg-black">
     <div class="container">
       <h2 class="text-white py-2 text-center">
-        Топ продаж
+        Запчасти
       </h2>
+      <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">
+        <ng-container *ngFor="let item of MACHINERY_SLICED_LIST">
+          <rshb-item-card [card]="item"></rshb-item-card>
+        </ng-container>
+      </div>
+      <a class="rshb-btn rshb-btn__accent mt-3 mt-lg-4 w-100" routerLink="/spares">Смотреть все</a>
     </div>
   </div>
 </section>
 
-<p>home-page works!</p>
-<div class="d-flex mb-4">
-  <div class="text_primary">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at blanditiis consectetur dolorum facilis illum, incidunt ipsum laborum nobis, odio, odit quod reiciendis rem suscipit tenetur totam unde voluptate voluptatum!
-  </div>
-  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur corporis debitis distinctio earum et impedit ipsa, labore quibusdam quidem tempora vitae! Atque ducimus earum error explicabo sit velit. Quis?</div>
-</div>
-
-<section class="mb-5">
+<section class="page-section">
   <div class="container">
-    <div class="banner-wrapper__three d-grid gap-3">
-      <rshb-item-card></rshb-item-card>
-      <rshb-item-card></rshb-item-card>
-      <rshb-item-card></rshb-item-card>
+    <h2 class="text-black text-center fw-600">
+      Техника
+    </h2>
+    <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">
+      <ng-container *ngFor="let item of MACHINERY_SLICED_LIST">
+        <rshb-item-card [card]="item"></rshb-item-card>
+      </ng-container>
+    </div>
+    <a class="rshb-btn rshb-btn__accent mt-3 mt-lg-4 w-100" routerLink="/agricultural-machinery">Смотреть все</a>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container">
+    <h3 class="text-center fw-600 mb-3">Вопросы-ответы</h3>
+    <div class="d-flex flex-column gap-lg-4 gap-3">
+      <rshb-collapsible-panel title="Как искать технику" [opened]="true">
+        <div class="rshb-text_dark-main mb-2 fw-400">
+          Откройте вкладку техника и посмотрите все представленные товары, также можно отсортировать их по своим предпочтения
+        </div>
+      </rshb-collapsible-panel>
+      <rshb-collapsible-panel title="Как искать запчасти" [opened]="true">
+        <div class="rshb-text_dark-main mb-2 fw-400">
+          Откройте вкладку запчастей, выберите тип техники, нужную сортировку
+        </div>
+      </rshb-collapsible-panel>
+      <rshb-collapsible-panel title="Как использовать конфигуратор" [opened]="true">
+        <div class="rshb-text_dark-main mb-2 fw-400">
+          Откройте вкладку конфигуратора, настройте подходящие параметры и нажмите кнопку поиска
+        </div>
+      </rshb-collapsible-panel>
     </div>
   </div>
 </section>

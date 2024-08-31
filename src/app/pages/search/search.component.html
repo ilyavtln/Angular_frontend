@@ -1,1 +1,46 @@
-<p>search works!</p>
+<section class="page-section__main-banner">
+  <div class="container">
+    <rshb-hero-banner [banner]="content.BANNER"></rshb-hero-banner>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container-fluid rshb-bg_light-gray p-3">
+    <div class="container">
+      <h3 class="text-center fw-600 mb-3">Находите нужные</h3>
+      <div class="myFlex my-3">
+        <input class="search-input rounded-3" type="search" [(ngModel)]="searchQuery" (ngModelChange)="onSearchQueryChange($event)" placeholder="Введите запрос">
+      </div>
+      <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">
+        <ng-container *ngFor="let item of filteredList">
+          <rshb-item-card [card]="item"></rshb-item-card>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container">
+    <h3 class="text-center fw-600 mb-3">Вопросы-ответы</h3>
+    <div class="d-flex flex-column gap-lg-4 gap-3">
+      <rshb-collapsible-panel title="Как искать технику" [opened]="true">
+        <div class="rshb-text_dark-main mb-2 fw-400">
+          Откройте вкладку техника и посмотрите все представленные товары, также можно отсортировать их по своим предпочтения
+        </div>
+      </rshb-collapsible-panel>
+      <rshb-collapsible-panel title="Как искать запчасти" [opened]="true">
+        <div class="rshb-text_dark-main mb-2 fw-400">
+          Откройте вкладку запчастей, выберите тип техники, нужную сортировку
+        </div>
+      </rshb-collapsible-panel>
+      <rshb-collapsible-panel title="Как использовать конфигуратор" [opened]="true">
+        <div class="rshb-text_dark-main mb-2 fw-400">
+          Откройте вкладку конфигуратора, настройте подходящие параметры и нажмите кнопку поиска
+        </div>
+      </rshb-collapsible-panel>
+    </div>
+  </div>
+</section>
+
+<rshb-scrolling-text></rshb-scrolling-text>

@@ -16,8 +16,8 @@ const ROUTES: Routes = [
     component: AgriculturalMachineryComponent,
   },
   {
-    path: 'tractors',
-    loadChildren: () => import('@pages/agricultural-machinery/tractors/tractors.module').then(m => m.TractorsModule)
+    path: 'more-details',
+    loadChildren: () => import('./more-details/more-details.module').then(m => m.MoreDetailsModule),
   }
 ]
 

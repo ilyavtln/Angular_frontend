@@ -1,6 +1,8 @@
 @import "src/styles/mixins/_breakpoints.scss";
 
 .nav-height {
+  height:4rem;
+
   @include media-breakpoint-up(md) {
     height: 3rem;
   }
@@ -13,10 +15,58 @@
 .menu-item {
   color: var(--light-color);
   font-weight: 500;
+  text-decoration: none;  // Добавлено для устранения подчеркивания ссылок
 
   &.active,
   &:hover {
     color: var(--primary-light);
+  }
+}
+
+.burger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;  // Добавлено для улучшения кликабельности
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--black);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+  &.open {
+    display: flex;
+  }
+
+  .menu-item {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-gray);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .mobile-menu {
+    display: none;
   }
 }
 
@@ -37,3 +87,5 @@
 .fixed-margin {
   margin-bottom: -10px;
 }
+
+

@@ -1,0 +1,16 @@
+<section class="page-section">
+  <div class="container-fluid rshb-bg_light-gray p-3">
+    <div class="container">
+      <h3 class="text-center fw-600 mb-3">Все товары
+        <span class="dark-greed-gradient">
+        {{param ? 'от поставщика ' + param : ''}}
+        </span>
+      </h3>
+      <div class="banner-wrapper__three d-grid gap-3 gap-lg-4">
+        <ng-container *ngFor="let item of filteredList">
+          <rshb-item-card [card]="item"></rshb-item-card>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>

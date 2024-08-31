@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as content from './configurator.config'
 
 @Component({
   selector: 'rshb-configurator',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class ConfiguratorComponent {
 
+  readonly content = content;
 }

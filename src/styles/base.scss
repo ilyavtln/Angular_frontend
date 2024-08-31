@@ -32,7 +32,7 @@
 }
 
 .primary-bordered {
-  border: 1 solid var(--primary);
+  border: 1px solid var(--primary);
 }
 
 .big-text {
@@ -41,6 +41,10 @@
 
 .fw-600 {
   font-weight: 600 !important;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
 }
 
 .rshb-btn {
@@ -52,6 +56,11 @@
   border-radius: 1rem;
   white-space: nowrap;
   box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid var(--primary-dark);
+  }
 
   @include media-breakpoint-up(md) {
     width: fit-content;
@@ -62,5 +71,45 @@
     background-color: var(--primary);
     color: var(--light-color);
     border-color: transparent;
+  }
+
+  &__secondary {
+    background-color: var(--primary-dark);
+    color: var(--light-color);
+    border-color: transparent;
+  }
+
+  &__accent {
+    background-color: var(--accent);
+    color: var(--light-color);
+    border-color: transparent;
+  }
+
+  &__accent-secondary {
+    background-color: var(--accent-secondary);
+    color: var(--light-color);
+    border-color: transparent;
+  }
+}
+
+.h-fit-content {
+  height: fit-content;
+}
+
+.w-fit-content {
+  width: fit-content;
+}
+
+.rshb-border-bottom {
+  &__primary {
+    border-bottom: 1px solid var(--primary) !important;
+  }
+
+  &__primary-dark {
+    border-bottom: 1px solid  var(--primary-dark) !important;
+  }
+
+  &__accent{
+    border-bottom: 1px solid  var(--accent) !important;
   }
 }

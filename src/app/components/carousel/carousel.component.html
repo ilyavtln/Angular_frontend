@@ -1,18 +1,25 @@
 <div class="carousel">
   <div class="slides-container" [style.transform]="getTransform()">
     <div class="slide" *ngFor="let slide of slides; let i = index">
-      <div class="slide-content">
-        <img class="slide-image" [src]="slide.image" alt="Product Image">
-        <div class="slide-text">
-          <p class="slide-title" [innerHTML]="slide.title"></p>
-          <p class="slide-description" [innerHTML]="slide.description"></p>
+      <div class="slide-content justify-content-between">
+        <div>
+          <img class="slide-image" [src]="slide.image" alt="Product Image">
+          <div class="slide-text w-100">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <p class="slide-title" [innerHTML]="slide.title"></p>
+                <p class="slide-description" [innerHTML]="slide.description"></p>
+              </div>
+            </div>
+          </div>
         </div>
+        <a routerLink="/providers" [queryParams]="{'name': slide.title}" class="rshb-btn rshb-btn__accent  w-100">Подробнее</a>
       </div>
     </div>
   </div>
 
   <div class="controls">
-    <button class="prev" (click)="prevSlide()">&#10094;</button>
-    <button class="next" (click)="nextSlide()">&#10095;</button>
+    <button class="prev rounded-2" (click)="prevSlide()">&#10094;</button>
+    <button class="next rounded-2" (click)="nextSlide()">&#10095;</button>
   </div>
 </div>
