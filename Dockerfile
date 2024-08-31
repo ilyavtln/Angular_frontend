@@ -1,10 +1,10 @@
 FROM node:22.2.0
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package.json ./
+COPY package.json package-lock.json ./
 
-RUN npm installgi
+RUN npm install
 
 COPY . .
 
