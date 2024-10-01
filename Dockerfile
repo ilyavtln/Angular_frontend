@@ -1,19 +1,24 @@
-FROM node:22.2.0
+# docker build -t angular_frontend .
+# docker run -d -p 8080:80 angular_frontend
 
-WORKDIR /usr/src/app
+#############################################################################
+FROM node:22-alpine AS build
 
-COPY package.json package-lock.json ./
+WORKDIR /app
+
+COPY package*.json ./
 
 RUN npm install
 
 COPY . .
 
-RUN npm run build --prod
+RUN npx ng build --configuration production
 
-EXPOSE 4200
+#############################################################################
+FROM nginx:1.27-alpine
 
-CMD ["npm", "start"]
+COPY --from=build /app/dist/angular-frontend/browser /usr/share/nginx/html
 
+EXPOSE 80
 
-
-
+CMD ["nginx", "-g", "daemon off;"]
